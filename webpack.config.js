@@ -45,7 +45,7 @@ const rruleConfig = Object.assign(
       rrule: path.join(paths.source, 'index.ts'),
     },
   },
-  commonConfig
+  commonConfig,
 )
 
 module.exports = [rruleConfig]

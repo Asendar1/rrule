@@ -11,7 +11,7 @@ import { Time, DateTime } from '../datetime'
 
 export function iter<M extends QueryMethodTypes>(
   iterResult: IterResult<M>,
-  options: ParsedOptions
+  options: ParsedOptions,
 ) {
   const { dtstart, freq, interval, until, bysetpos } = options
 
@@ -31,7 +31,7 @@ export function iter<M extends QueryMethodTypes>(
     const [dayset, start, end] = ii.getdayset(freq)(
       counterDate.year,
       counterDate.month,
-      counterDate.day
+      counterDate.day,
     )
 
     const filtered = removeFilteredDays(dayset, start, end, ii, options)
@@ -106,7 +106,7 @@ export function iter<M extends QueryMethodTypes>(
         counterDate.hour,
         counterDate.minute,
         counterDate.second,
-        0
+        0,
       )
     }
 
@@ -117,7 +117,7 @@ export function iter<M extends QueryMethodTypes>(
 function isFiltered(
   ii: Iterinfo,
   currentDay: number,
-  options: ParsedOptions
+  options: ParsedOptions,
 ): boolean {
   const {
     bymonth,
@@ -161,7 +161,7 @@ function removeFilteredDays(
   start: number,
   end: number,
   ii: Iterinfo,
-  options: ParsedOptions
+  options: ParsedOptions,
 ) {
   let filtered = false
   for (let dayCounter = start; dayCounter < end; dayCounter++) {
@@ -178,7 +178,7 @@ function removeFilteredDays(
 function makeTimeset(
   ii: Iterinfo,
   counterDate: DateTime,
-  options: ParsedOptions
+  options: ParsedOptions,
 ): Time[] | null {
   const { freq, byhour, byminute, bysecond } = options
 
@@ -204,6 +204,6 @@ function makeTimeset(
     counterDate.hour,
     counterDate.minute,
     counterDate.second,
-    counterDate.millisecond
+    counterDate.millisecond,
   )
 }

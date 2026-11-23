@@ -95,7 +95,7 @@ rruleSet.rrule(
     freq: RRule.MONTHLY,
     count: 5,
     dtstart: datetime(2012, 2, 1, 10, 30),
-  })
+  }),
 )
 
 // Add a date to rruleSet
@@ -110,7 +110,7 @@ rruleSet.exrule(
     freq: RRule.MONTHLY,
     count: 2,
     dtstart: datetime(2012, 3, 1, 10, 30),
-  })
+  }),
 )
 
 // Add a exclusion date to rruleSet
@@ -156,7 +156,7 @@ rrulestr('DTSTART:20120201T023000Z\nRRULE:FREQ=MONTHLY;COUNT=5', {
 
 // Parse a RRuleSet string, return a RRuleSet object
 rrulestr(
-  'DTSTART:20120201T023000Z\nRRULE:FREQ=MONTHLY;COUNT=5\nRDATE:20120701T023000Z,20120702T023000Z\nEXRULE:FREQ=MONTHLY;COUNT=2\nEXDATE:20120601T023000Z'
+  'DTSTART:20120201T023000Z\nRRULE:FREQ=MONTHLY;COUNT=5\nRDATE:20120701T023000Z,20120702T023000Z\nEXRULE:FREQ=MONTHLY;COUNT=2\nEXDATE:20120601T023000Z',
 )
 ```
 
@@ -555,7 +555,7 @@ var rule = RRule.fromString('DTSTART:20120201T093000Z\nRRULE:FREQ=WEEKLY;')
 
 // This is equivalent
 var rule = new RRule(
-  RRule.parseString('DTSTART:20120201T093000Z\nRRULE:FREQ=WEEKLY')
+  RRule.parseString('DTSTART:20120201T093000Z\nRRULE:FREQ=WEEKLY'),
 )
 ```
 
@@ -776,7 +776,7 @@ rruleSet.rrule(
     freq: RRule.MONTHLY,
     count: 5,
     dtstart: start,
-  })
+  }),
 )
 
 // Add a date to rruleSet

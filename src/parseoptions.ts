@@ -57,23 +57,21 @@ export function parseOptions(options: Partial<Options>) {
       const v = opts.bysetpos[i]
       if (v === 0 || !(v >= -366 && v <= 366)) {
         throw new Error(
-          'bysetpos must be between 1 and 366,' + ' or between -366 and -1'
+          'bysetpos must be between 1 and 366,' + ' or between -366 and -1',
         )
       }
     }
   }
 
-  if (
-    !(
-      Boolean(opts.byweekno as number) ||
-      notEmpty(opts.byweekno as number[]) ||
-      notEmpty(opts.byyearday as number[]) ||
-      Boolean(opts.bymonthday) ||
-      notEmpty(opts.bymonthday as number[]) ||
-      isPresent(opts.byweekday) ||
-      isPresent(opts.byeaster)
-    )
-  ) {
+  if (!(
+    Boolean(opts.byweekno as number) ||
+    notEmpty(opts.byweekno as number[]) ||
+    notEmpty(opts.byyearday as number[]) ||
+    Boolean(opts.bymonthday) ||
+    notEmpty(opts.bymonthday as number[]) ||
+    isPresent(opts.byweekday) ||
+    isPresent(opts.byeaster)
+  )) {
     switch (opts.freq) {
       case RRule.YEARLY:
         if (!opts.bymonth) opts.bymonth = opts.dtstart.getUTCMonth() + 1

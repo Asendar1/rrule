@@ -5,7 +5,7 @@
 import { ALL_WEEKDAYS, WeekdayStr } from './weekday'
 
 export const isPresent = function <T>(
-  value?: T | null | undefined
+  value?: T | null | undefined,
 ): value is T {
   return value !== null && value !== undefined
 }
@@ -60,7 +60,7 @@ export const toArray = function <T>(item: T | T[]): T[] {
 export function padStart(
   item: string | number,
   targetLength: number,
-  padString = ' '
+  padString = ' ',
 ) {
   const str = String(item)
   targetLength = targetLength >> 0
